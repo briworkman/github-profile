@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+html {
+  background-color: #1a1e21;
+}
+
 .App {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App-logo {
@@ -35,4 +42,47 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.user-container {
+  width: 40%;
+  margin: 0 auto;
+  color: white;
+  margin-top: 5%;
+}
+
+.username-link {
+  text-decoration: none;
+  color: #71cf64;
+  font-size: 24px;
+}
+
+.profile-pic {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 5px solid #71cf64;
+}
+
+.icons {
+  width: 15px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+}
+
+.github-stats {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
 }
