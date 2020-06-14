@@ -82,7 +82,18 @@ html {
 }
 
 .github-stats {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   justify-content: space-around;
+}
+
+.stats {
+  line-height: 0.5;
+  background-color: #222a2d;
+  width: 150px;
+}
+
+.stats p {
+  color: #949fb1;
 }
