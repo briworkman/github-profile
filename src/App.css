@@ -28,7 +28,7 @@ html {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(231, 231, 231);
 }
 
 .App-link {
@@ -53,7 +53,7 @@ html {
 }
 
 .title {
-  color: white;
+  color: rgb(231, 231, 231);
 }
 
 .input {
@@ -94,10 +94,18 @@ html {
   color: #1a1e21;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+}
+.main-container {
+  width: 80%;
+}
+
 .user-container {
-  width: 40%;
+  width: 50%;
   margin: 0 auto;
-  color: white;
+  color: rgb(231, 231, 231);
   margin-top: 5%;
 }
 
@@ -108,7 +116,7 @@ html {
 }
 
 .username-link:hover {
-  color: white;
+  color: rgb(231, 231, 231);
 }
 
 .profile-pic {
@@ -146,8 +154,28 @@ html {
   line-height: 0.5;
   background-color: #222a2d;
   width: 150px;
+  box-shadow: 5px 5px 9px -4px rgba(0, 0, 0, 1);
 }
 
 .stats p {
   color: #949fb1;
+}
+
+.chart {
+  margin-top: 30px;
+  background-color: #222a2d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 410px;
+  height: 450px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 18px -8px rgba(0, 0, 0, 1);
+}
+
+.chart h1 {
+  color: rgb(231, 231, 231);
+  padding: 10px;
+  border-bottom: 2px dashed grey;
 }
