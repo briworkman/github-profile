@@ -1,29 +1,35 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import logo from '../assets/logo.png';
 
 function UserName(props) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (user) => {
     props.history.push({
-      pathname: `/user/${user.username}`,
+      pathname: `/profile/${user.username}`,
       state: { username: user.username },
     });
   };
 
   return (
-    <div>
-      <h1>HI</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <h1>Enter Username Here</h1>
+    <div className='username'>
+      <img src={logo} alt='GitHub Profile Logo' className='logo' />
+      <form onSubmit={handleSubmit(onSubmit)} className='form'>
+        <h1 className='title'>Find Your GitHub Profile</h1>
         <div className='field'>
           <input
+            className='input'
             type='text'
-            placeholder='Username'
+            placeholder=''
             name='username'
             ref={register({ required: true, maxLength: 100 })}
           />
+        </div>
+        <div className='button-container'>
           {errors.username && 'Username is required'}
-          <button type='submit'>Submit</button>
+          <button className='submit-button' type='submit'>
+            Submit
+          </button>
         </div>
       </form>
     </div>
