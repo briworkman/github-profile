@@ -4,43 +4,13 @@ import calendar from '../assets/calendar.png';
 import mapMarker from '../assets/map-marker.png';
 import GhPolyglot from 'gh-polyglot';
 import { PieChart, Pie, Cell } from 'recharts';
+import TopRepos from './TopRepos';
 
 function UserInfo(props) {
   let username = props.location.state.username;
   const [user, setUser] = useState({});
   const [langData, setLangData] = useState(null);
   const [repoData, setRepoData] = useState(null);
-  const [topRepos, setTopRepos] = useState([]);
-  const [sortType, setSortType] = useState('stars');
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const getTopRepos = (type) => {
-    const LIMIT = 6;
-    const map = {
-      stars: 'stargazers_count',
-      forks: 'forks_count',
-      size: 'size',
-    };
-    const sortProperty = map[type];
-    const sorted = repoData
-      ? repoData
-          .filter((repo) => !repo.fork)
-          .sort((a, b) => b[sortProperty] - a[sortProperty])
-          .slice(0, LIMIT)
-      : console.log('loading...');
-
-    console.log(sorted);
-    setTopRepos(sorted);
-  };
-
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
-
-  const changeRepoSort = (sortType) => {
-    setSortType(sortType);
-    toggleDropdown();
-  };
-
-  const sortTypes = ['stars', 'forks', 'size'];
 
   const getLangData = () => {
     const me = new GhPolyglot(`${username}`);
@@ -56,7 +26,9 @@ function UserInfo(props) {
     axios
       .get(`https://api.github.com/users/${username}/repos?per_page=100`)
       .then((response) => {
-        setRepoData(response.data);
+        response.data
+          ? setRepoData(response.data)
+          : console.log('loading repos');
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -64,6 +36,9 @@ function UserInfo(props) {
   };
 
   useEffect(() => {
+    getLangData();
+    getRepoData();
+
     axios
       .get(`https://api.github.com/users/${username}`)
       .then((response) => {
@@ -74,22 +49,19 @@ function UserInfo(props) {
       .catch((err) => {
         console.log(err);
       });
-
-    getLangData();
-    getRepoData();
   }, []);
 
+  // console.log('TOP REPOS:', topRepos);
   // useEffect(() => {
-  //   if (repoData) {
-  //     console.log(repoData);
-  //     getTopRepos();
-  //     console.log(topRepos);
-  //   }
+  //   // repoData
+  //   //   ? console.log('REPO DATA:', repoData)
+  //   //   : console.log('...loading repo data');
+  //   getTopRepos();
   // }, []);
 
-  // useEffect(() => getTopRepos(sortType), [sortType]);
+  // console.log('REPO DATA:', repoData);
 
-  // console.log('TOP REPOS', to);
+  // useEffect(() => getTopRepos(sortType), [sortType]);
 
   // var langData = [
   //   { label: 'Python', value: 11, color: '#3572A5' },
@@ -192,7 +164,8 @@ function UserInfo(props) {
             </Pie>
           </PieChart>
         </div>
-        <button onClick={() => getTopRepos()}>Repos</button>
+        {repoData ? <TopRepos repoData={repoData} /> : null}
+        {/* <button onClick={() => getTopRepos()}>Repos</button> */}
       </div>
     </div>
   );
