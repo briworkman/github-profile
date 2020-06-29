@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import UserInfo from './components/UserInfo';
+import UserData from './components/UserData';
 import UserName from './components/UserName';
 
 import { Route, Switch } from 'react-router-dom';
@@ -10,7 +10,7 @@ function App() {
     <div className='App'>
       <Switch>
         <Route exact path='/' component={UserName} />
-        <Route exact path='/profile/:id' component={UserInfo} />
+        <Route exact path='/profile/:id' component={UserData} />
       </Switch>
     </div>
   );
