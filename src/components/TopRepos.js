@@ -42,7 +42,17 @@ function TopRepos(repoData) {
 
   return (
     <div>
-      <h1>TOP REPOS</h1>
+      {topRepos.map((repos) => {
+        return (
+          <div>
+            <h1>{repos.name}</h1>
+            <h3>{repos.language}</h3>
+            <h3>{repos.size}</h3>
+            <h3>{repos.stargazers_count}</h3>
+            <h3>{repos.forks}</h3>
+          </div>
+        );
+      })}
     </div>
   );
 }
