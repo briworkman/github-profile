@@ -44,12 +44,14 @@ function TopRepos(repoData) {
     <div>
       {topRepos.map((repos) => {
         return (
-          <div>
-            <h1>{repos.name}</h1>
-            <h3>{repos.language}</h3>
-            <h3>{repos.size}</h3>
-            <h3>{repos.stargazers_count}</h3>
-            <h3>{repos.forks}</h3>
+          <div className='top-repos'>
+            <h2>{repos.name}</h2>
+            <div className='repo-data'>
+              <p>{repos.language}</p>
+              <p>{repos.size}</p>
+              <p>{repos.stargazers_count}</p>
+              <p>{repos.forks}</p>
+            </div>
           </div>
         );
       })}

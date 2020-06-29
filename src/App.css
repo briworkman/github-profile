@@ -179,3 +179,18 @@ html {
   padding: 10px;
   border-bottom: 2px dashed grey;
 }
+
+.top-repos {
+  background-color: #222a2d;
+  box-shadow: 5px 5px 9px -4px rgba(0, 0, 0, 1);
+  width: 30%;
+  margin: 10px;
+  color: rgb(231, 231, 231);
+  padding-top: 10px;
+  border-radius: 10px;
+}
+
+.repo-data {
+  display: flex;
+  justify-content: space-evenly;
+}
