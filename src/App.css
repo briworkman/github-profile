@@ -109,6 +109,14 @@ html {
   margin-top: 5%;
 }
 
+.user-container h1 {
+  font-size: 2.5rem;
+}
+
+.user-container p {
+  font-size: 1.2rem;
+}
+
 .username-link {
   text-decoration: none;
   color: #71cf64;
@@ -120,8 +128,8 @@ html {
 }
 
 .profile-pic {
-  height: 100px;
-  width: 100px;
+  height: 150px;
+  width: 150px;
   border-radius: 50%;
   border: 5px solid #71cf64;
 }
