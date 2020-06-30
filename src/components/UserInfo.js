@@ -83,7 +83,6 @@ function UserInfo(prop) {
             </PieChart>
           </div>
           {props.repoData ? <RepoData repoData={props.repoData} /> : null}
-          {/* <TopRepos /> */}
         </div>
       </div>
     </div>
