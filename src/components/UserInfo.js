@@ -1,8 +1,8 @@
 import React from 'react';
 import calendar from '../assets/calendar.png';
 import mapMarker from '../assets/map-marker.png';
-import { PieChart, Pie, Cell } from 'recharts';
 import RepoData from './RepoData';
+import TopLanguages from './TopLanguages';
 
 function UserInfo(prop) {
   let props = prop.props;
@@ -61,27 +61,9 @@ function UserInfo(prop) {
           </div>
         </div>
         <div className='info-container'>
-          <div className='chart'>
-            <h1>Top Languages</h1>
-            <PieChart width={400} height={300} className='pie-chart'>
-              <Pie
-                data={props.langData ? props.langData : []}
-                labelLine={true}
-                fill='#8884d8'
-                dataKey='value'
-                label={(entry) => entry.label}
-              >
-                {props.langData
-                  ? props.langData.map((entry, index) => (
-                      <Cell
-                        key={`cell-${index}`}
-                        fill={props.COLORS[index % props.COLORS.length]}
-                      />
-                    ))
-                  : []}
-              </Pie>
-            </PieChart>
-          </div>
+          {props.langData ? (
+            <TopLanguages languageData={props.langData} COLORS={props.COLORS} />
+          ) : null}
           {props.repoData ? <RepoData repoData={props.repoData} /> : null}
         </div>
       </div>
