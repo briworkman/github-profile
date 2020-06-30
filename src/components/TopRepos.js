@@ -2,43 +2,44 @@ import React, { useEffect, useState } from 'react';
 import star from '../assets/star.png';
 import fork from '../assets/fork.png';
 
-function TopRepos(repoData) {
-  const [topRepos, setTopRepos] = useState([]);
-  const [sortType, setSortType] = useState('stars');
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+function TopRepos(props) {
+  console.log('TOP REPO PROPS:', props.topRepos);
+  // const [topRepos, setTopRepos] = useState([]);
+  // const [sortType, setSortType] = useState('stars');
+  // const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // console.log(repoData.repoData);
+  // // console.log(repoData.repoData);
 
-  const getTopRepos = (type) => {
-    const LIMIT = 8;
-    const map = {
-      stars: 'stargazers_count',
-      forks: 'forks_count',
-      size: 'size',
-    };
+  // const getTopRepos = (type) => {
+  //   const LIMIT = 8;
+  //   const map = {
+  //     stars: 'stargazers_count',
+  //     forks: 'forks_count',
+  //     size: 'size',
+  //   };
 
-    const sortProperty = map[type];
-    const sorted = repoData.repoData
-      ? repoData.repoData
-          .filter((repo) => !repo.fork)
-          .sort((a, b) => b[sortProperty] - a[sortProperty])
-          .slice(0, LIMIT)
-      : console.log('Sorting Repos...');
-    setTopRepos(sorted);
-  };
+  //   const sortProperty = map[type];
+  //   const sorted = repoData.repoData
+  //     ? repoData.repoData
+  //         .filter((repo) => !repo.fork)
+  //         .sort((a, b) => b[sortProperty] - a[sortProperty])
+  //         .slice(0, LIMIT)
+  //     : console.log('Sorting Repos...');
+  //   setTopRepos(sorted);
+  // };
 
-  const sortTypes = ['stars', 'forks', 'size'];
+  // const sortTypes = ['stars', 'forks', 'size'];
 
-  const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+  // const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
-  const changeRepoSort = () => {
-    setSortType(sortType);
-    toggleDropdown();
-  };
+  // const changeRepoSort = () => {
+  //   setSortType(sortType);
+  //   toggleDropdown();
+  // };
 
-  useEffect(() => {
-    getTopRepos();
-  }, []);
+  // useEffect(() => {
+  //   getTopRepos();
+  // }, []);
 
   // const topRepos = [
   //   {
@@ -105,7 +106,7 @@ function TopRepos(repoData) {
     <div className='repo-container'>
       <h1>Top Repos</h1>
       <div className='repo-cards'>
-        {topRepos.map((repos) => {
+        {props.topRepos.map((repos) => {
           return (
             <div className='top-repos'>
               <h2>{repos.name}</h2>

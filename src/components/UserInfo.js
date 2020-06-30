@@ -2,7 +2,7 @@ import React from 'react';
 import calendar from '../assets/calendar.png';
 import mapMarker from '../assets/map-marker.png';
 import { PieChart, Pie, Cell } from 'recharts';
-import TopRepos from './TopRepos';
+import RepoData from './RepoData';
 
 function UserInfo(prop) {
   let props = prop.props;
@@ -82,7 +82,7 @@ function UserInfo(prop) {
               </Pie>
             </PieChart>
           </div>
-          {props.repoData ? <TopRepos repoData={props.repoData} /> : null}
+          {props.repoData ? <RepoData repoData={props.repoData} /> : null}
           {/* <TopRepos /> */}
         </div>
       </div>
