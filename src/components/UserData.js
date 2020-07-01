@@ -40,7 +40,7 @@ function UserData(props) {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [username]);
 
   var COLORS = langData
     ? langData.map((colors) => {
