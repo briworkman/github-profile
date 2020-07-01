@@ -102,6 +102,10 @@ html {
   width: 90%;
 }
 
+.info-container {
+  display: flex;
+}
+
 .user-container {
   width: 50%;
   margin: 0 auto;
@@ -167,6 +171,11 @@ html {
 
 .stats p {
   color: #949fb1;
+}
+
+.chart-container {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .chart {

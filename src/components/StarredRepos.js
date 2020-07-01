@@ -7,6 +7,7 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
+  Brush,
 } from 'recharts';
 
 function StarredRepos(props) {
@@ -18,25 +19,33 @@ function StarredRepos(props) {
   }));
 
   return (
-    <div>
-      <BarChart
-        width={500}
-        height={300}
-        data={data}
-        margin={{
-          top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray='3 3' />
-        <XAxis dataKey='name' />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey='stars' fill='#71CF64' />
-      </BarChart>
+    <div className='chart-container'>
+      <div className='chart'>
+        <h1>Top Starred repos</h1>
+        <BarChart
+          width={400}
+          height={275}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+          }}
+        >
+          <CartesianGrid strokeDasharray='1 1' />
+          <XAxis dataKey='name' />
+          <YAxis />
+          <Tooltip />
+          <Legend color='white' />
+          <Bar dataKey='stars' fill='#71CF64' />
+          <Brush
+            dataKey='name'
+            height={20}
+            stroke='gray'
+            startIndex={2}
+            endIndex={7}
+          ></Brush>
+        </BarChart>
+      </div>
     </div>
   );
 }

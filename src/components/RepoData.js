@@ -41,8 +41,8 @@ function RepoData(repoData) {
   }, []);
   return (
     <div>
-      <TopRepos topRepos={topRepos} />
       <StarredRepos topRepos={topRepos} />
+      <TopRepos topRepos={topRepos} />
     </div>
   );
 }
