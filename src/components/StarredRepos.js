@@ -18,6 +18,8 @@ function StarredRepos(props) {
     stars: `${repos.stargazers_count}`,
   }));
 
+  const color = '#ffffff';
+
   return (
     <div className='chart-container'>
       <div className='chart'>
@@ -35,12 +37,12 @@ function StarredRepos(props) {
           <XAxis dataKey='name' />
           <YAxis />
           <Tooltip />
-          <Legend color='white' />
+          <Legend style={{ color: '#ffffff' }} />
           <Bar dataKey='stars' fill='#71CF64' />
           <Brush
             dataKey='name'
             height={20}
-            stroke='gray'
+            stroke='#919791'
             startIndex={2}
             endIndex={7}
           ></Brush>

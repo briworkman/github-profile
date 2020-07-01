@@ -178,6 +178,10 @@ html {
   justify-content: space-evenly;
 }
 
+.recharts-legend-item-text {
+  color: white;
+}
+
 .chart {
   margin-top: 30px;
   background-color: #222a2d;
