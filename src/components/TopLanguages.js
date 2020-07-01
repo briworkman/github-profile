@@ -2,7 +2,6 @@ import React from 'react';
 import { PieChart, Pie, Cell } from 'recharts';
 
 function TopLanguages(props) {
-  console.log(props);
   return (
     <div className='chart'>
       <h1>Top Languages</h1>

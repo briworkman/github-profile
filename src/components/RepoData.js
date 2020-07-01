@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TopRepos from './TopRepos';
+import StarredRepos from './StarredRepos';
 
 function RepoData(repoData) {
   const [topRepos, setTopRepos] = useState([]);
@@ -38,7 +39,12 @@ function RepoData(repoData) {
   useEffect(() => {
     getTopRepos();
   }, []);
-  return <TopRepos topRepos={topRepos} />;
+  return (
+    <div>
+      <TopRepos topRepos={topRepos} />
+      <StarredRepos topRepos={topRepos} />
+    </div>
+  );
 }
 
 export default RepoData;
