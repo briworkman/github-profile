@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import star from '../assets/star.png';
 import fork from '../assets/fork.png';
 
@@ -9,7 +9,7 @@ function TopRepos(props) {
       <div className='repo-cards'>
         {props.topRepos.map((repos) => {
           return (
-            <div className='top-repos'>
+            <div className='top-repos' key={repos.id}>
               <h2>{repos.name}</h2>
               <div className='repo-data'>
                 <p>{repos.language}</p>

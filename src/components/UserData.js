@@ -39,7 +39,6 @@ function UserData(props) {
     axios
       .get(`https://api.github.com/users/${username}`)
       .then((response) => {
-        console.log(response);
         setUser(response.data);
       })
 

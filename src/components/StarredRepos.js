@@ -11,14 +11,10 @@ import {
 } from 'recharts';
 
 function StarredRepos(props) {
-  console.log('STARRED PROPS:', props);
-
   const data = props.topRepos.map((repos) => ({
     name: `${repos.name}`,
     stars: `${repos.stargazers_count}`,
   }));
-
-  const color = '#ffffff';
 
   return (
     <div className='chart-container'>
@@ -37,7 +33,7 @@ function StarredRepos(props) {
           <XAxis dataKey='name' />
           <YAxis />
           <Tooltip />
-          <Legend style={{ color: '#ffffff' }} />
+          <Legend />
           <Bar dataKey='stars' fill='#71CF64' />
           <Brush
             dataKey='name'

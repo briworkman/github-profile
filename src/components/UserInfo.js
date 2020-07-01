@@ -13,7 +13,7 @@ function UserInfo(prop) {
           <img
             src={props.user.avatar_url}
             className='profile-pic'
-            alt={`${props.username} profile picture`}
+            alt={`${props.username}`}
           />
           <h1>{props.user.name}</h1>
           <a
