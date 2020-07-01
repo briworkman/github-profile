@@ -9,7 +9,8 @@ function UserData(props) {
   const [langData, setLangData] = useState(null);
   const [repoData, setRepoData] = useState(null);
 
-  const getLangData = () => {
+  useEffect(() => {
+    // Gets language data
     const me = new GhPolyglot(`${username}`);
     me.userStats((err, stats) => {
       if (err) {
@@ -17,9 +18,7 @@ function UserData(props) {
       }
       setLangData(stats);
     });
-  };
-
-  const getRepoData = () => {
+    // Gets repo data
     axios
       .get(`https://api.github.com/users/${username}/repos?per_page=100`)
       .then((response) => {
@@ -30,12 +29,8 @@ function UserData(props) {
       .catch((error) => {
         console.error('Error:', error);
       });
-  };
 
-  useEffect(() => {
-    getLangData();
-    getRepoData();
-
+    // Gets user info
     axios
       .get(`https://api.github.com/users/${username}`)
       .then((response) => {
