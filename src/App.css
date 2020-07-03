@@ -239,6 +239,10 @@ body {
   margin-bottom: 10px;
 }
 
+.repo-cards a {
+  text-decoration: none;
+}
+
 .top-repos {
   display: flex;
   flex-wrap: wrap;

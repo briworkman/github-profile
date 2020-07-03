@@ -9,21 +9,28 @@ function TopRepos(props) {
       <div className='repo-cards'>
         {props.topRepos.map((repos) => {
           return (
-            <div className='top-repos' key={repos.id}>
-              <h2>{repos.name}</h2>
-              <div className='repo-data'>
-                <p>{repos.language}</p>
-                <p>{repos.size} MB</p>
-                <div className='icon-container'>
-                  <img src={star} alt='star' className='star-icon' />
-                  <p>{repos.stargazers_count}</p>
-                </div>
-                <div className='icon-container'>
-                  <img src={fork} alt='fork' className='fork-icon' />
-                  <p>{repos.forks}</p>
+            <a
+              href={repos.svn_url}
+              key={repos.id}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <div className='top-repos'>
+                <h2>{repos.name}</h2>
+                <div className='repo-data'>
+                  <p>{repos.language}</p>
+                  <p>{repos.size} MB</p>
+                  <div className='icon-container'>
+                    <img src={star} alt='star' className='star-icon' />
+                    <p>{repos.stargazers_count}</p>
+                  </div>
+                  <div className='icon-container'>
+                    <img src={fork} alt='fork' className='fork-icon' />
+                    <p>{repos.forks}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </a>
           );
         })}
       </div>
