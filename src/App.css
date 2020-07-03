@@ -267,3 +267,22 @@ html {
   margin-top: -3px;
   height: 15px;
 }
+
+.footer {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(231, 231, 231);
+  height: 5vh;
+  background-color: #222a2d;
+}
+
+.footer a {
+  text-decoration: none;
+  color: rgb(231, 231, 231);
+}
+
+.footer a:hover {
+  color: #71cf64;
+}
