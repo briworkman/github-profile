@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import TopRepos from './TopRepos';
-import StarredRepos from './StarredRepos';
 
 function RepoData(repoData) {
   const [topRepos, setTopRepos] = useState([]);
@@ -10,7 +9,7 @@ function RepoData(repoData) {
   // console.log(repoData.repoData);
 
   const getTopRepos = (type) => {
-    const LIMIT = 8;
+    const LIMIT = 9;
     const map = {
       stars: 'stargazers_count',
       forks: 'forks_count',
@@ -40,8 +39,7 @@ function RepoData(repoData) {
     getTopRepos();
   }, []);
   return (
-    <div>
-      <StarredRepos topRepos={topRepos} />
+    <div className='repo-data'>
       <TopRepos topRepos={topRepos} />
     </div>
   );

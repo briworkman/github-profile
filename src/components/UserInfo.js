@@ -61,10 +61,17 @@ function UserInfo(prop) {
           </div>
         </div>
         <div className='info-container'>
-          {props.langData ? (
-            <TopLanguages languageData={props.langData} COLORS={props.COLORS} />
-          ) : null}
-          {props.repoData ? <RepoData repoData={props.repoData} /> : null}
+          <div className='top-language-container'>
+            {props.langData ? (
+              <TopLanguages
+                languageData={props.langData}
+                COLORS={props.COLORS}
+              />
+            ) : null}
+          </div>
+          <div>
+            {props.repoData ? <RepoData repoData={props.repoData} /> : null}
+          </div>
         </div>
       </div>
     </div>
