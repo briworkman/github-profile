@@ -100,6 +100,7 @@ html {
 }
 
 .info-container {
+  margin-top: 100px;
   display: flex;
   width: 100%;
 }
@@ -189,7 +190,7 @@ html {
   justify-content: space-around;
   flex-direction: column;
   width: 410px;
-  height: 500px;
+  height: 550px;
   border-radius: 10px;
   box-shadow: 10px 10px 18px -8px rgba(0, 0, 0, 1);
 }
@@ -215,6 +216,7 @@ html {
   border-radius: 10px;
   box-shadow: 10px 10px 18px -8px rgba(0, 0, 0, 1);
   width: 80%;
+  height: 555px;
 }
 
 .repo-container h1 {
