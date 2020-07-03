@@ -3,7 +3,7 @@ import React from 'react';
 const Corner = () => (
   <div className='github-corner'>
     <a
-      href='https://github.com/bchiang7/octoprofile'
+      href='https://github.com/briworkman/github-profile'
       target='_blank'
       rel='noopener noreferrer'
       className='github-corner'
