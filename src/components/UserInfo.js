@@ -7,7 +7,11 @@ import GitHubCalendar from 'github-calendar';
 
 function UserInfo(prop) {
   let props = prop.props;
-  GitHubCalendar('.calendar', props.user.login);
+  GitHubCalendar('.calendar', props.user.login, {
+    responsive: true,
+    summary_text: ' ',
+    tooltips: true,
+  });
 
   return (
     <div className='container'>
@@ -63,7 +67,11 @@ function UserInfo(prop) {
             </div>
           </div>
         </div>
-        <div className='calendar'></div>
+        <div className='chart-container'>
+          <div className='github-chart'>
+            <div className='calendar'></div>
+          </div>
+        </div>
         <div className='info-container'>
           <div className='top-language-container'>
             {props.langData ? (
