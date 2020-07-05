@@ -333,3 +333,11 @@ body {
     transform: rotate(10deg);
   }
 }
+
+.calendar {
+  background-color: white;
+}
+
+.contrib-legend {
+  display: none;
+}

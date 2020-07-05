@@ -3,9 +3,12 @@ import calendar from '../assets/calendar.png';
 import mapMarker from '../assets/map-marker.png';
 import RepoData from './RepoData';
 import TopLanguages from './TopLanguages';
+import GitHubCalendar from 'github-calendar';
 
 function UserInfo(prop) {
   let props = prop.props;
+  GitHubCalendar('.calendar', props.user.login);
+
   return (
     <div className='container'>
       <div className='main-container'>
@@ -13,7 +16,7 @@ function UserInfo(prop) {
           <img
             src={props.user.avatar_url}
             className='profile-pic'
-            alt={`${props.username}`}
+            alt={`${props.user.login}`}
           />
           <h1>{props.user.name}</h1>
           <a
@@ -60,6 +63,7 @@ function UserInfo(prop) {
             </div>
           </div>
         </div>
+        <div className='calendar'></div>
         <div className='info-container'>
           <div className='top-language-container'>
             {props.langData ? (
