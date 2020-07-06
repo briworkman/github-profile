@@ -5,6 +5,7 @@ import logo from '../assets/logo.png';
 function UserName(props) {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (user) => {
+    console.log(props);
     props.history.push({
       pathname: `/profile/${user.username}`,
       state: { username: user.username },
