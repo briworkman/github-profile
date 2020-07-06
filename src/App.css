@@ -377,4 +377,8 @@ body {
   .calendar {
     display: none;
   }
+  .user-info {
+    flex-direction: column;
+    align-items: center;
+  }
 }
