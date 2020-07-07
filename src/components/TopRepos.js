@@ -47,13 +47,12 @@ function TopRepos(props) {
       <div className='title-wrapper'>
         <h1>Top Repos</h1>
         <div className='dropdown-wrapper'>
-          <span className='label'>by</span>
           <div className='dropdown-menu'>
             <button
               className='dropdown-button'
               onClick={() => toggleDropdown()}
             >
-              <label>{sortType}</label>
+              <label className='button-label'>{sortType}</label>
               <img
                 className='dropdown-img'
                 src={dropdownOpen ? arrowUp : arrowDown}
