@@ -1,9 +1,9 @@
 import React from 'react';
 import calendar from '../assets/calendar.png';
 import mapMarker from '../assets/map-marker.png';
-import RepoData from './RepoData';
 import TopLanguages from './TopLanguages';
 import GitHubCalendar from 'github-calendar';
+import TopRepos from './TopRepos';
 
 function UserInfo(prop) {
   let props = prop.props;
@@ -82,7 +82,7 @@ function UserInfo(prop) {
             ) : null}
           </div>
           <div>
-            {props.repoData ? <RepoData repoData={props.repoData} /> : null}
+            {props.repoData ? <TopRepos repoData={props.repoData} /> : null}
           </div>
         </div>
       </div>
