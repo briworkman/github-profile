@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import star from '../assets/star.png';
 import fork from '../assets/fork.png';
+import arrowUp from '../assets/up-arrow.png';
+import arrowDown from '../assets/down-arrow.png';
 
 function TopRepos(props) {
-  console.log('TOP REPOS', props);
   const [topRepos, setTopRepos] = useState([]);
   const [sortType, setSortType] = useState('stars');
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -43,21 +44,30 @@ function TopRepos(props) {
 
   return (
     <div className='repo-container'>
-      <h1>Top Repos</h1>
-      <div className='dropdown-wrapper'>
-        <span className='label'>by</span>
-        <div active={dropdownOpen}>
-          <button className='dropdown__button' onClick={() => toggleDropdown()}>
-            <label>{sortType}</label>
-            <button>^</button>
-          </button>
-          <ul className='dropdown__list'>
-            {sortTypes.map((type, i) => (
-              <li className='dropdown__list-item' key={i}>
-                <button onClick={() => changeRepoSort(type)}>{type}</button>
-              </li>
-            ))}
-          </ul>
+      <div className='title-wrapper'>
+        <h1>Top Repos</h1>
+        <div className='dropdown-wrapper'>
+          <span className='label'>by</span>
+          <div className='dropdown-menu'>
+            <button
+              className='dropdown-button'
+              onClick={() => toggleDropdown()}
+            >
+              <label>{sortType}</label>
+              <img
+                className='dropdown-img'
+                src={dropdownOpen ? arrowUp : arrowDown}
+                alt={dropdownOpen ? 'Close Dropdown' : 'Open Dropdown'}
+              />
+            </button>
+            <ul className={dropdownOpen ? 'list-open' : 'list-closed'}>
+              {sortTypes.map((type, i) => (
+                <li className='dropdown-list-item' key={i}>
+                  <button onClick={() => changeRepoSort(type)}>{type}</button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <div className='repo-cards'>

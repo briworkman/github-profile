@@ -362,6 +362,34 @@ body {
   box-shadow: 10px 10px 18px -8px rgba(0, 0, 0, 1);
 }
 
+.title-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-wrapper span {
+  margin-right: 10px;
+}
+
+.dropdown-img {
+  width: 25px;
+}
+
+.list-closed {
+  display: none;
+}
+
+.list-open {
+  list-style: none;
+}
+
 @media only screen and (max-width: 950px) {
   .info-container {
     flex-direction: column;
