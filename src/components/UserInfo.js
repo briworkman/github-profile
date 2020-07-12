@@ -4,6 +4,7 @@ import mapMarker from '../assets/map-marker.png';
 import TopLanguages from './TopLanguages';
 import GitHubCalendar from 'github-calendar';
 import TopRepos from './TopRepos';
+import Footer from './Footer';
 
 function UserInfo(prop) {
   let props = prop.props;
@@ -77,6 +78,7 @@ function UserInfo(prop) {
           {props.repoData ? <TopRepos repoData={props.repoData} /> : null}
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
